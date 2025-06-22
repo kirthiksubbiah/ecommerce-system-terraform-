@@ -14,7 +14,7 @@ phases:
   build:
     commands:
       - echo Running SonarQube Analysis on EC2-hosted SonarQube...
-      - sonar-scanner -Dsonar.projectKey=E-commerce -Dsonar.sources=. -Dsonar.host.url=http://3.87.198.49 -Dsonar.login=sqp_03cf9b6a7c2243b636278204866434d8a5ff8337
+      - sonar-scanner -Dsonar.projectKey=us-west-1 -Dsonar.sources=. -Dsonar.host.url=http://3.87.198.49 -Dsonar.login=sqp_cb963e2e6d4c8da1b35546485916a1e40ca5c32a
       - 'echo "Build started on $(date)"'
       - 'docker build -t ${REPO_URI}:${IMAGE_TAG} .'
       - 'docker tag ${REPO_URI}:${IMAGE_TAG} ${REPO_URI}:latest'
