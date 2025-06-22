@@ -4,10 +4,10 @@ phases:
     commands:
       - echo "Logging in to Amazon ECR..."
       - aws --version
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 026090546401.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 026090546401.dkr.ecr.us-west-2.amazonaws.com
       - 'IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)'
       - 'echo "Image Tag: $IMAGE_TAG"'
-      - 'REPO_URI=026090546401.dkr.ecr.us-east-1.amazonaws.com/ecommerce-flask'
+      - 'REPO_URI=026090546401.dkr.ecr.us-west-2.amazonaws.com/ecommerce-flask'
       - curl -sSLo sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
       - unzip -q sonar-scanner.zip
       - export PATH=$PATH:$(pwd)/sonar-scanner-4.8.0.2856-linux/bin
@@ -25,7 +25,7 @@ phases:
       - 'docker push ${REPO_URI}:latest'
       - 'echo "Updating Kubernetes deployment..."'
       - 'sed -i "s|image: .*|image: ${REPO_URI}:${IMAGE_TAG}|" k8s/deployment.yaml'
-      - 'aws eks update-kubeconfig --region us-east-1 --name ecommerce-cluster'
+      - 'aws eks update-kubeconfig --region us-west-2 --name ecommerce-cluster'
       - 'kubectl apply -f k8s/'
 artifacts:
   files:
