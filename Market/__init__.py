@@ -6,7 +6,7 @@ from flask_wtf.csrf import CSRFProtect  # ✅ Add this
 import os
  
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://admin:admin123@database-1.c38cueauyeoe.us-east-1.rds.amazonaws.com:3306/ecommerce"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://admin:admin123@database-1.cnas22u8mzr6.us-west-2.rds.amazonaws.com:3306/ecommerce"
 app.config['SECRET_KEY'] = "my_super_secret_key_123456"
  
 # ✅ Init extensions
