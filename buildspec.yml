@@ -8,7 +8,8 @@ phases:
       - echo "Installing AWS CLI and kubectl..."
       - pip install --upgrade awscli
       - curl -o kubectl https://s3.us-west-2.amazonaws.com/amazon-eks/1.29.1/2024-05-06/bin/linux/amd64/kubectl
-      - chmod +x kubectl && mv kubectl /usr/local/bin/
+      - chmod +x kubectl
+      - mv kubectl /usr/local/bin/
       - kubectl version --client
 
   pre_build:
