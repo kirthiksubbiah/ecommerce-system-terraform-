@@ -1,7 +1,7 @@
 import mysql.connector
 
 # AWS RDS MySQL connection details
-host = "database-1.c38cueauyeoe.us-east-1.rds.amazonaws.com"
+host = "database-1.cnas22u8mzr6.us-west-2.rds.amazonaws.com"
 port = 3306
 database = "ecommerce"
 user = "admin"
