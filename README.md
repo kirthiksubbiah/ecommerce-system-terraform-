@@ -2,7 +2,7 @@
 
 Simple e-commerce website built with Flask and SQLite. Allows users to register, login, and purchase items. Also has an admin panel that allows administrators to view and manage users and items.
 
-<h2 align=center>Go to the website<br>https://e-commerce2023.onrender.com</h2>
+<h2 align=center>Go to the website<br>http://kirthiksubbiah.com</h2>
 
 ### Dependencies
 - Flask >= 2.2.5
