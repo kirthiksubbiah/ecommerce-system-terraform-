@@ -29,4 +29,4 @@ phases:
       - 'kubectl apply -f k8s/'
 artifacts:
   files:
-    - k8s/*
+    - k8s/deployment.yaml
